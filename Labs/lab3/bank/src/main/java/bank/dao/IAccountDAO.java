@@ -1,7 +1,8 @@
 package bank.dao;
 
-import java.util.Collection;
 import bank.domain.Account;
+
+import java.util.Collection;
 
 public interface IAccountDAO {
 	void saveAccount(Account account);

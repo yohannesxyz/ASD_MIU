@@ -1,35 +1,28 @@
 package bank.dao;
 
-import java.util.*;
 import bank.domain.Account;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 public class AccountDAO implements IAccountDAO {
-	Collection<Account> accountlist = new ArrayList<Account>();
+	Map<Long,Account> accountlist = new HashMap<Long,Account>();
 
 	public void saveAccount(Account account) {
-		accountlist.add(account); // add the new
+		accountlist.put(account.getAccountnumber(), account); 
 	}
 
 	public void updateAccount(Account account) {
-		Account accountexist = loadAccount(account.getAccountnumber());
-		if (accountexist != null) {
-			accountlist.remove(accountexist); // remove the old
-			accountlist.add(account); // add the new
-		}
-
+		accountlist.put(account.getAccountnumber(), account); 
 	}
 
 	public Account loadAccount(long accountnumber) {
-		for (Account account : accountlist) {
-			if (account.getAccountnumber() == accountnumber) {
-				return account;
-			}
-		}
-		return null;
+		return accountlist.get(accountnumber);
 	}
 
 	public Collection<Account> getAccounts() {
-		return accountlist;
+		return accountlist.values();
 	}
 
 }

@@ -1,12 +1,16 @@
 package bank.domain;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
 
 
 public class Account {
 	long accountnumber;
 	Collection<AccountEntry> entryList = new ArrayList<AccountEntry>();
 	Customer customer;
+	private IInterestStrategy interestStrategy;
+	private String accountType;
 
 	
 	public Account (long accountnr){
@@ -55,5 +59,24 @@ public class Account {
 	public Collection<AccountEntry> getEntryList() {
 		return entryList;
 	}
+	public String getAccountType() {
+		return accountType;
+	}
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+	public void setInterestStrategy(IInterestStrategy interestStrategy) {
+		this.interestStrategy = interestStrategy;
+	}
+	
+	public void addInterest(){
+		System.out.println("AddInterest on "+accountType+" account with account number "+accountnumber);
+		System.out.println("Old balance = "+getBalance());
+		double interest =interestStrategy.computeInterest(getBalance());
+		AccountEntry entry = new AccountEntry(new Date(), interest, "interest", "", "");
+		entryList.add(entry);
+		System.out.println("New balance = "+getBalance());
+	}
+
 
 }
