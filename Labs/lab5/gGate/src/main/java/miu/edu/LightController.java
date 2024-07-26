@@ -7,12 +7,17 @@ public class LightController implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         GateState newState = (GateState) evt.getNewValue();
-        if (newState instanceof OpeningState) {
-            flashOrange();
-        } else if (newState instanceof ClosingState) {
-            flashRed();
-        } else {
-            off();
+        switch (newState) {
+            case OPENING:
+                flashOrange();
+                break;
+            case CLOSING:
+                flashRed();
+                break;
+            case OPEN:
+            case CLOSED:
+                off();
+                break;
         }
     }
 

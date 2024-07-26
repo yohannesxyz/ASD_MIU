@@ -11,14 +11,11 @@ public class Main {
 
         // Simulate pressing the button on the remote control
         gateController.pressButton(); // Opening
-        gateController.pressButton(); // Stopped
-        gateController.pressButton(); // Continue Opening
+        gateController.pressButton(); // Closing
 
         // Simulate the gate reaching fully open and closed states
         gateController.sensorOpenSignal(); // Open
         gateController.pressButton(); // Closing
-        gateController.pressButton(); // Stopped
-        gateController.pressButton(); // Continue Closing
         gateController.sensorClosedSignal(); // Closed
 
 

@@ -1,8 +1,7 @@
 package miu.edu;
 
-public enum GateState {
-    OPEN,
-    CLOSED,
-    OPENING,
-    CLOSING
+public interface GateState {
+    void pressButton(GateController controller);
+    void sensorOpenSignal(GateController controller);
+    void sensorClosedSignal(GateController controller);
 }

@@ -1,4 +1,5 @@
 package miu.edu;
+
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
@@ -7,7 +8,7 @@ public class GateController {
     private final PropertyChangeSupport support;
 
     public GateController() {
-        this.state = new ClosedState();
+        this.state = GateState.CLOSED;
         this.support = new PropertyChangeSupport(this);
     }
 
@@ -16,18 +17,31 @@ public class GateController {
     }
 
     public void pressButton() {
-        state.pressButton(this);
+        switch (state) {
+            case OPEN:
+                setState(GateState.CLOSING);
+                break;
+            case CLOSED:
+                setState(GateState.OPENING);
+                break;
+            case OPENING:
+                setState(GateState.CLOSING);
+                break;
+            case CLOSING:
+                setState(GateState.OPENING);
+                break;
+        }
     }
 
     public void sensorOpenSignal() {
-        state.sensorOpenSignal(this);
+        setState(GateState.OPEN);
     }
 
     public void sensorClosedSignal() {
-        state.sensorClosedSignal(this);
+        setState(GateState.CLOSED);
     }
 
-    public void setState(GateState newState) {
+    private void setState(GateState newState) {
         GateState oldState = this.state;
         this.state = newState;
         support.firePropertyChange("state", oldState, newState);
