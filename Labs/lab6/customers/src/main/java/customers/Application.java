@@ -1,5 +1,7 @@
 package customers;
 
+import java.util.Iterator;
+
 public class Application {
 
 	public static void main(String[] args) {
@@ -15,8 +17,31 @@ public class Application {
 		customerCollection.add(new Customer("Joe","Johnson","jj@gmail.com","0643256743",48, new Address("453 N C Street","Chicago","59223")));
 		customerCollection.add(new Customer("Frank","Cohen","fcohen@gmail.com","0643232178",53, new Address("Jeffersen Av 3","New York","54221")));
 		customerCollection.add(new Customer("Eric","Johnson","ejohnson@hotmail.com","0612342345",36, new Address("1000 S 4th street","San Fransisco","12544")));
-		
-		customerCollection.print();
+
+//		Iterator<Customer> iterator = customerCollection.ageIterator();
+//		while (iterator.hasNext()) {
+//			System.out.println(iterator.next());
+//		}
+
+//		filtering customers from chicago
+//		iterator = customerCollection.filterIterator(c -> c.getAddress().getCity().equals("Chicago"));
+//		while (iterator.hasNext()) {
+//			System.out.println(iterator.next());
+//		}
+
+//		filtering customers with zipcode starting with 12
+//		iterator = customerCollection.filterIterator(c -> c.getAddress().getZip().startsWith("12"));
+//		while (iterator.hasNext()) {
+//			System.out.println(iterator.next());
+//		}
+
+//		skipping every other customer
+		Iterator<Customer> iterator3 = customerCollection.skipIterator();
+		while (iterator3.hasNext()) {
+			System.out.println(iterator3.next());
+		}
+
+//		customerCollection.print();
 
 	}
 

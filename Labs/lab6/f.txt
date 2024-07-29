@@ -1,0 +1,28 @@
+Without Composite Pattern
+Advantages:
+
+Type Safety: Each class is clearly defined, ensuring strong type safety.
+Specialized Behavior: Each class can have specialized behavior, making it easier to handle specific cases.
+Disadvantages:
+
+Complexity: More classes and relationships make the system harder to maintain and extend.
+Rigid Structure: Adding new node types requires significant changes.
+Code Duplication: Common functionality might need to be duplicated across classes.
+With Composite Pattern
+Advantages:
+
+Flexibility: Simplifies the structure by using a common interface, making it easier to add new node types.
+Reusability: Common operations are implemented once, reducing code duplication.
+Simplified Client Code: Client code can treat all nodes uniformly, reducing type checks and casting.
+Disadvantages:
+
+Less Type Safety: A common interface for all node types can lead to less type safety and potential runtime errors.
+Generalization of Behavior: Specific behaviors need to be handled within the same class, which can blur responsibilities.
+Performance Overhead: Additional abstraction layers may introduce performance overhead.
+
+
+
+
+
+
+
