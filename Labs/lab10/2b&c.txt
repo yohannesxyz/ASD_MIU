@@ -1,0 +1,12 @@
+Advantages:
+
+Separation of Concerns: It separates the algorithm from the object structure, promoting cleaner code and better separation of concerns.
+Extensibility: You can add new operations to existing object structures without modifying those structures.
+Single Responsibility: Each visitor class has a single responsibility, making the system easier to understand and maintain.
+
+
+Disadvantages:
+
+Complexity: It can increase the system's complexity, especially if there are many different visitor classes.
+Dependency: Visitors need to know the structure of the objects they visit, creating a dependency between the visitor and the object structure.
+Object Structure Changes: If the object structure changes frequently, it can be costly to maintain the visitor implementations.
