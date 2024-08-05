@@ -35,5 +35,5 @@ public class Main {
         orderCollection.accept(tvOrderVisitor);
         System.out.println("TVs Ordered: " + tvOrderVisitor.getTvCount());
     }
-    
+
 }
