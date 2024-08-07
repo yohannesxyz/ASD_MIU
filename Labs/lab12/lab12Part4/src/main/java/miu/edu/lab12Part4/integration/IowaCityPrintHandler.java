@@ -1,4 +1,4 @@
-package miu.edu.lab12Part2.integration;
+package miu.edu.lab12Part4.integration;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
