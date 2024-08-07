@@ -4,7 +4,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
-@Order(Integer.MAX_VALUE)
+@Order(4)
 public class DefaultPrintHandler implements IPrintHandler {
     @Override
     public void print() {

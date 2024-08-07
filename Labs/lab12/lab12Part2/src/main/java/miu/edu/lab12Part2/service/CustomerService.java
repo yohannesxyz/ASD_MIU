@@ -3,7 +3,7 @@ package miu.edu.lab12Part2.service;
 import miu.edu.lab12Part2.integration.EmailSender;
 import miu.edu.lab12Part2.domain.Address;
 import miu.edu.lab12Part2.domain.Customer;
-import miu.edu.lab12Part2.repository.ICustomerDAO;
+import miu.edu.lab12Part2.repository.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     @Autowired
-    private ICustomerDAO customerDAO;
+    private CustomerDAO customerDAO;
 
     @Autowired
     private EmailSender emailSender;

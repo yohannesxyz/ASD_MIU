@@ -3,11 +3,10 @@ package miu.edu.lab12Part2.repository;
 import miu.edu.lab12Part2.integration.Logger;
 import miu.edu.lab12Part2.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class CustomerDAO implements ICustomerDAO {
+public class CustomerDAO {
 
     Logger logger;
 
