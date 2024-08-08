@@ -1,5 +1,6 @@
 package miu.edu.lab13A.domain;
 
+
 public class Customer {
     private String name;
     private String email;
@@ -15,28 +16,32 @@ public class Customer {
         return name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
     public void setAddress(Address address) {
         this.address = address;
     }
 
+    @Override
     public String toString() {
-        return "Customer [name=" + name + ", email=" + email + ", address=" + address + "]";
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                '}';
     }
-
 }
